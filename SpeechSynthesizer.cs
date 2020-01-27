@@ -67,6 +67,9 @@ namespace PptPolly
         static public string GetSpeech(string text, string voice = "")
         {
             SynthesizeSpeechRequest speechRequest = new SynthesizeSpeechRequest();
+
+            TextType ssml = TextType.Ssml;
+            speechRequest.TextType = ssml;
             speechRequest.Text = text;
             speechRequest.OutputFormat = OutputFormat.Mp3;
             speechRequest.VoiceId = VoiceIdFromString(voice);
