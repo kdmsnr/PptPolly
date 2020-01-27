@@ -36,7 +36,7 @@ namespace PptPolly
         /// <returns></returns>
         static private VoiceId VoiceIdFromString(string voice = "")
         {
-            VoiceId voiceId = VoiceId.Joanna; // Default
+            VoiceId voiceId = VoiceId.Takumi; // Default
 
             switch (voice)
             {
@@ -62,7 +62,7 @@ namespace PptPolly
         /// Returns temporary file with MP3 for input text, synthetized in call to Amazon Polly.
         /// </summary>
         /// <param name="text">Text to become speech.</param>
-        /// <param name="voice">Voice. Default is Joanna in English, US.</param>
+        /// <param name="voice">Voice. Default is Takumi in Japanese.</param>
         /// <returns></returns>
         static public string GetSpeech(string text, string voice = "")
         {
