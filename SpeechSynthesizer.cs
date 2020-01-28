@@ -70,7 +70,7 @@ namespace PptPolly
 
             TextType ssml = TextType.Ssml;
             speechRequest.TextType = ssml;
-            text = text.Replace('”', '"').Replace('“', '"');
+            text = text.Replace('”', '"').Replace('“', '"').Replace("\r", "").Replace("\n", "");
             speechRequest.Text = text;
             speechRequest.OutputFormat = OutputFormat.Mp3;
             speechRequest.VoiceId = VoiceIdFromString(voice);

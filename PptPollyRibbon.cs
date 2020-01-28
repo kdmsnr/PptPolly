@@ -111,26 +111,7 @@ namespace PptPolly
         private void buttonAddVoice_Click(object sender, RibbonControlEventArgs e)
         {
             string slideNotes = GetNotesFromCurrentSlide();
-            if (!string.IsNullOrEmpty(slideNotes))
-            {
-                string[] lines = slideNotes.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-                // Format is two lines
-                // speech
-                // voice
-                string speech = lines[0];
-                string voice = string.Empty;
-                if (lines.Length > 1)
-                {
-                    voice = lines[1];
-                }
-
-                PowerPoint.Shape captionTextbox = GetCaptionTextboxFromCurrentSlide();
-                if (null != captionTextbox)
-                {
-                    captionTextbox.TextFrame.TextRange.Text = speech;
-                }
-                SetPollyAudioForCurrentSlide(speech, voice);
-            }
+            SetPollyAudioForCurrentSlide(slideNotes, null);
         }
     }
 }
